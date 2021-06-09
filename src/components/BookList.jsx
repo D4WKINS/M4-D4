@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Card, Row, Col, Container,Form,FormControl} from "react-bootstrap";
+import {Row, Col, Container,Form,FormControl} from "react-bootstrap";
 import SingleBook from './SingleBook'
 
 
 class BookList extends Component {
   state = { 
     query: "",
-    selected:""
  }
   render() {
     return (
@@ -23,8 +22,8 @@ class BookList extends Component {
         <Row xs={1} md={2} lg={4} className="g-4">
           {
          this.props.books.filter(b => b.title.toLowerCase().includes(this.state.query)).map(b => (
-          <Col xs={3} key={b.asin} onClick={()=> this.setState({id:b.asin,selected:b})}>
-              <SingleBook book={b} id={this.state.selected && this.state.selected.id}/>
+          <Col xs={3} key={b.asin}>
+              <SingleBook title={b.title} book={b} />
 
           </Col>
       ))

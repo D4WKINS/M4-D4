@@ -1,4 +1,4 @@
-import {Component, P} from 'react';
+import {Component} from 'react';
 import {Alert} from 'react-bootstrap'
 
 
